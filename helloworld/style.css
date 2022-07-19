@@ -1,15 +1,14 @@
 body {
-    background-color: rgb(139, 93, 36);
+    background-color: bisque;
     font-size: 15px;
 }
 
 .sample-div-class {
-    color: red;
     font-size: 16px;
     font-weight: bold;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 500px) {
     .sample-heading {
         text-align: center;
     }
