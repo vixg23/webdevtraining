@@ -1,0 +1,45 @@
+body {
+    background-color: bisque;
+    font-size: 15px;
+}
+
+.sample-div-class {
+    font-size: 16px;
+    font-weight: bold;
+    width: 50%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.flex-tutorial-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container-items {
+    display: flex;
+}
+
+.bg-light {
+    background-color: white;
+}
+
+.bg-dark {
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .sample-heading {
+        text-align: center;
+    }
+    body {
+        background-color: darkslategrey;
+        color: white;
+    }
+    .bg-light {
+        color: black;
+    }
+}
