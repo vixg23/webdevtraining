@@ -2,29 +2,31 @@
 HTML+CSS+JS+React+Redux
 
 
-July 19 2022 - helloworld
+July 19 2022
+------------
+helloworld
 
-July 20 2022 - flexbox
+July 20 2022
+-------------
+flexbox
 
-July 21 2022 - npm set up
+July 21 2022
+-------------
+npm set up
 
-July 22 2033 - Javascript intoduction 
-HTML Types of elements
------------------
-Display
-Input
-Action
+July 22 2033
+-------------
+Javascript intoduction 
 
-Programming Language
+-HTML Types of elements
+Display, Input, Action
 
-JS
----
-primitive datatypes - types
-reference datatypes - types
+-Programming Language
 
-Operations
+-JS
+primitive datatypes, reference datatypes
 
-String
--------
-Concatenation
-Interpolation
+-Operations
+
+-String
+Concatenation, Interpolation
