@@ -30,3 +30,27 @@ primitive datatypes, reference datatypes
 
 -String
 Concatenation, Interpolation
+
+
+July 23 2033
+-------------
+
+boolean operations
+string operations
+
+reference datatypes
+array, object - operations
+
+array
+indexing, push, ...
+Concatenation
+array1.concat(array2) = [...array1, ...array2];
+
+
+object
+finding by key -> object1.key1, object1['key1']
+
+
+objects - nested objects
+JSON
+function
