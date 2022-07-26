@@ -54,3 +54,31 @@ finding by key -> object1.key1, object1['key1']
 objects - nested objects
 JSON
 function
+
+
+July 23 2033
+-------------
+
+codepen.io
+
+window object
+
+window.document
+
+window.alert
+
+document.getElementById()
+
+document.getElementsByClassName()
+
+javascript events, calling functions on events
+
+if else conditions
+
+return statement
+
+NaN
+
+parseInt
+
+What equals to `false` in javascript
