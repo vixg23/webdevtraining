@@ -56,7 +56,7 @@ JSON
 function
 
 
-July 23 2033
+July 23 2022
 -------------
 
 codepen.io
@@ -82,3 +82,25 @@ NaN
 parseInt
 
 What equals to `false` in javascript
+
+
+July 24 2022
+--------------
+
+If, else if, else
+
+switch case
+
+return
+
+debugger
+
+break
+
+for loop
+
+for...in
+
+for..of
+
+increment/decrement
