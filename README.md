@@ -14,7 +14,7 @@ July 21 2022
 -------------
 npm set up
 
-July 22 2033
+July 22 2022
 -------------
 Javascript intoduction 
 
@@ -32,7 +32,7 @@ primitive datatypes, reference datatypes
 Concatenation, Interpolation
 
 
-July 23 2033
+July 23 2022
 -------------
 
 boolean operations
