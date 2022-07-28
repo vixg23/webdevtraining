@@ -56,7 +56,7 @@ JSON
 function
 
 
-July 23 2022
+July 25 2022
 -------------
 
 codepen.io
@@ -84,7 +84,7 @@ parseInt
 What equals to `false` in javascript
 
 
-July 24 2022
+July 26 2022
 --------------
 
 If, else if, else
@@ -104,3 +104,22 @@ for...in
 for..of
 
 increment/decrement
+
+
+July 27 2022
+-------------
+
+Spread Operator, override/add properties to obj
+
+Rest Operator
+
+arrow function, elimination return keyword
+
+array forEach
+
+array filter
+
+
+
+
+
