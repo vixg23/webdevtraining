@@ -121,5 +121,22 @@ array filter
 
 
 
+Apr 03 2022
+------------
+
+*Creating dynamic html elements*
+document.createElement, setAttribute, onclick, appendChild, parentNode, childNodes
+
+*Frameworks intro*
+JQuery introduction
+create react app -> https://create-react-app.dev/
+Virtual DOM. Why React?
+
+
+
+
+
+
+
 
 
