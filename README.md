@@ -162,6 +162,30 @@ render
 constructor is not required if there is no need for adding variables to the component
 
 
+Apr 05 2022
+------------
+
+Difference between arrow function and normal function
+
+this keyword scope
+
+importing css in react component
+
+state of React component
+
+difference between state and props
+
+React component lifecycle
+```
+Mounting the component
+1. constructor - initialize state
+2. render
+
+Updating the component
+1. render
+```
+
+handling button clicks/state changes in React component
 
 
 
