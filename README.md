@@ -153,7 +153,7 @@ extends
 
 super
 
-React component
+React class component
 
 props
 
