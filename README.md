@@ -167,7 +167,7 @@ Apr 05 2022
 
 Difference between arrow function and normal function
 
-this keyword scope
+this keyword scope https://codepen.io/vixg23/pen/eYMrGov
 
 importing css in react component
 
