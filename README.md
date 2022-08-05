@@ -134,6 +134,32 @@ Virtual DOM. Why React?
 
 
 
+Apr 04 2022
+-----------
+
+JSX -> Difference between html & JSX (class = className)
+
+import, export, default export
+
+Classes
+
+Intoduction to `this`
+
+creating new class
+
+constructor
+
+extends
+
+super
+
+React component
+
+props
+
+render
+
+constructor is not required if there is no need for adding variables to the component
 
 
 
