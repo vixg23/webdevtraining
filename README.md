@@ -121,7 +121,7 @@ array filter
 
 
 
-Apr 03 2022
+Aug 03 2022
 ------------
 
 *Creating dynamic html elements*
@@ -134,7 +134,7 @@ Virtual DOM. Why React?
 
 
 
-Apr 04 2022
+Aug 04 2022
 -----------
 
 JSX -> Difference between html & JSX (class = className)
@@ -162,7 +162,7 @@ render
 constructor is not required if there is no need for adding variables to the component
 
 
-Apr 05 2022
+Aug 05 2022
 ------------
 
 Difference between arrow function and normal function
@@ -188,5 +188,12 @@ Updating the component
 handling button clicks/state changes in React component
 
 
+Aug 09 2022
+------------
 
+Exception handling https://codepen.io/vixg23/pen/ZExjeKo?editors=0010
+
+Rendering list of elements in React (array.map function)
+
+API calls https://codepen.io/vixg23/pen/OJvwpam
 
