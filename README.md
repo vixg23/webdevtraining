@@ -197,3 +197,16 @@ Rendering list of elements in React (array.map function)
 
 API calls https://codepen.io/vixg23/pen/OJvwpam
 
+
+Aug 10 2022
+-----------
+
+Promises - resolve, reject
+
+fetch -> get, post, put, delete
+
+componentDidUpdate
+
+
+
+
