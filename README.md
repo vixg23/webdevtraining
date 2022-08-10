@@ -201,7 +201,7 @@ API calls https://codepen.io/vixg23/pen/OJvwpam
 Aug 10 2022
 -----------
 
-Promises - resolve, reject
+Promises - resolve, reject, then, catch
 
 fetch -> get, post, put, delete
 
