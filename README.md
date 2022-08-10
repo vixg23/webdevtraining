@@ -207,6 +207,7 @@ fetch -> get, post, put, delete
 
 componentDidUpdate
 
+dogAPI documentation https://dog.ceo/dog-api/documentation/
 
 
 
