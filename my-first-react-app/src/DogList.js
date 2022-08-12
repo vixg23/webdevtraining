@@ -3,7 +3,8 @@ import './DogList.css';
 import { getData } from './apiHelper.js';
 
 const initialState = {
-    listOfDogs: []
+    listOfDogs: [],
+    inputValue: ''
 }
 
 class DogList extends React.Component {
@@ -30,10 +31,18 @@ class DogList extends React.Component {
 
     }
 
+    handleInputChange(event) {
+        this.setState({
+            ...this.state,
+            inputValue: event.target.value
+        });
+    }
+
     render() {
         return (
             <div className={this.props.className}>
                 <div>My DogList Component</div>
+                <input type='text' id='my-input' value={this.state.inputValue} onChange={(event) => this.handleInputChange(event)}/>
                 {this.state.listOfDogs.map((item) => <div>{item}</div>)}
             </div>
         );
