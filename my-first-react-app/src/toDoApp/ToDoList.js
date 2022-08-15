@@ -1,4 +1,6 @@
 import React from "react";
+import ToDoListItem from './ToDoListItem';
+import './toDoList.css';
 
 const initialState = {
     addToDoValue: '',
@@ -20,6 +22,9 @@ class ToDoList extends React.Component {
     }
 
     addToDoOnClick() {
+        if (!this.state.addToDoValue) {
+            return;
+        }
         const date = new Date();
         this.setState({
             ...this.state,
@@ -28,18 +33,28 @@ class ToDoList extends React.Component {
                 ...this.state.toDos,
                 {
                     id: date.getTime(),
-                    text: this.state.addToDoValue
+                    text: this.state.addToDoValue,
+                    done: false
                 }
             ]
         });
     }
- 
-    toDoDoneClick() {
-        console.log('On To Do Click');
+
+    toDoDoneClick(id) {
+        const updateToDos = [...this.state.toDos];
+        updateToDos.forEach((toDo) => {
+            if (id === toDo.id) {
+                toDo.done = true;
+            }
+        });
+        this.setState({
+            ...this.state,
+            toDos: updateToDos
+        });
     }
 
-    toDoDeleteClick(event, item) {
-        const updateToDos = this.state.toDos.filter((toDo) => toDo.id !== item.id);
+    toDoDeleteClick(id) {
+        const updateToDos = this.state.toDos.filter((toDo) => toDo.id !== id);
 
         this.setState({
             ...this.state,
@@ -47,21 +62,29 @@ class ToDoList extends React.Component {
         });
     }
 
+    getToDoTextClassName(isTodoDone) {
+        return isTodoDone ? 'to-do-text to-do-done' : 'to-do-text';
+    }
+
     render() {
-        return <div>
+        return <div className='to-do-app'>
             <h1>To-Do List</h1>
-            <div>
-                <input type='text' value={this.state.addToDoValue} onChange={(event) => this.addToDoChange(event)} />
-                <button className='add-to-do-button' onClick={() => { this.addToDoOnClick() }}>ADD</button>
+            <div className='to-do-input-container'>
+                <input className='to-do-input' type='text' value={this.state.addToDoValue} onChange={(event) => this.addToDoChange(event)} />
+                <button className='add-to-do-button' onClick={() => { this.addToDoOnClick() }}>
+                    <i className="fa-solid fa-square-plus fa-2xl"></i>
+                </button>
             </div>
             <div className='to-do-list'>
                 {
                     this.state.toDos.map((item) => {
-                        return (<div className="to-do-item" key={item.id}>
-                            <div>{item.text}</div>
-                            <button className='done-button' onClick={(event) => { this.toDoDoneClick(event) }}>DONE</button>
-                            <button className='delete-button' onClick={(event) => { this.toDoDeleteClick(event, item) }}>DELETE</button>
-                        </div>);
+                        return <ToDoListItem
+                            id={item.id}
+                            done={item.done}
+                            text={item.text}
+                            onDoneClick={(id) => this.toDoDoneClick(id)}
+                            onDeleteClick={(id) => this.toDoDeleteClick(id)}
+                        />;
                     })
                 }
             </div>

@@ -1,0 +1,86 @@
+.to-do-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#root {
+    background: linear-gradient(#0696e7, #75cbca);
+    height: 100vh;
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+}
+
+.to-do-input-container {
+    width: 50%;
+    display: flex;
+    margin: 60px 0px 40px 0px;
+}
+
+.to-do-input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.to-do-input:focus {
+    outline: none;
+}
+
+.add-to-do-button {
+    color: #fe6f47;
+    background: none;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.to-do-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    margin: 5px 0px;
+}
+
+.to-do-list {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.done-button {
+    background: none;
+    border: none;
+    background-color: #08d4a2;
+    height: 45px;
+    width: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    background-color: #fe6f47;
+    height: 45px;
+    width: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+.to-do-text {
+    padding-left: 10px;
+}
+
+.to-do-done {
+    text-decoration: line-through;
+}
