@@ -210,4 +210,17 @@ componentDidUpdate
 dogAPI documentation https://dog.ceo/dog-api/documentation/
 
 
+Aug 16 2022
+-----------
+Functional components
+
+Object breakdown, array breakdown
+
+React Hooks -> useState, useEffect
+
+
+
+
+
+
 
