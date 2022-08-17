@@ -1,52 +1,38 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './DogList.css';
 import { getData } from './apiHelper.js';
 
-const initialState = {
-    listOfDogs: [],
-    inputValue: ''
-}
+const DogList = (props) => {
 
-class DogList extends React.Component {
-    constructor(props) {
-        super(props);
-        // creating state
-        this.state = initialState;
-    }
+    const [listOfDogs, setListOfDogs] = useState([]);
+    const [inputValue, setInputValue] = useState('');
 
-    componentDidMount() {
+    useEffect(() => {
         getData('https://dog.ceo/api/breeds/list/all')
             .then((dogResponse) => {
                 const dogList = [];
                 for (let key in dogResponse.message) {
                     dogList.push(key);
                 }
-                this.setState({
-                    listOfDogs: dogList
-                });
+                setListOfDogs(dogList);
             })
             .catch((error) => {
                 console.log(error);
             });
 
+    }, []);
+
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
     }
 
-    handleInputChange(event) {
-        this.setState({
-            ...this.state,
-            inputValue: event.target.value
-        });
-    }
-
-    render() {
-        return (
-            <div className={this.props.className}>
-                <div>My DogList Component</div>
-                <input type='text' id='my-input' value={this.state.inputValue} onChange={(event) => this.handleInputChange(event)}/>
-                {this.state.listOfDogs.map((item) => <div>{item}</div>)}
-            </div>
-        );
-    }
+    return (
+        <div className={props.className}>
+            <div>My DogList Component</div>
+            <input type='text' id='my-input' value={inputValue} onChange={(event) => handleInputChange(event)} />
+            {listOfDogs.map((item) => <div>{item}</div>)}
+        </div>
+    );
 }
 
 export default DogList;

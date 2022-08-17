@@ -1,95 +1,74 @@
-import React from "react";
+import React, { useReducer } from "react";
 import ToDoListItem from './ToDoListItem';
 import './toDoList.css';
+import reducer, { TO_DO_LIST_ACTIONS, INITIAL_STATE } from './toDoReducer';
 
-const initialState = {
-    addToDoValue: '',
-    toDos: []
-};
+const ToDoList = () => {
 
-class ToDoList extends React.Component {
+    const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
-    constructor(props) {
-        super(props);
-        this.state = initialState;
-    }
-
-    addToDoChange(event) {
-        this.setState({
-            ...this.state,
+    const addToDoChange = (event) => {
+        dispatch({
+            type: TO_DO_LIST_ACTIONS.SET_TO_DO_INPUT_VALUE,
             addToDoValue: event.target.value
         });
     }
 
-    addToDoOnClick() {
-        if (!this.state.addToDoValue) {
-            return;
-        }
-        const date = new Date();
-        this.setState({
-            ...this.state,
-            addToDoValue: '',
-            toDos: [
-                ...this.state.toDos,
-                {
-                    id: date.getTime(),
-                    text: this.state.addToDoValue,
-                    done: false
-                }
-            ]
+    const addToDoOnClick = () => {
+        dispatch({
+            type: TO_DO_LIST_ACTIONS.ADD_NEW_TO_DO,
+            addToDoValue: state.addToDoValue
         });
     }
 
-    toDoDoneClick(id) {
-        const updateToDos = [...this.state.toDos];
-        updateToDos.forEach((toDo) => {
-            if (id === toDo.id) {
-                toDo.done = true;
+    const toDoDoneClick = (id) => {
+        dispatch({
+            type: TO_DO_LIST_ACTIONS.MARK_TO_DO_DONE,
+            id: id
+        });
+    }
+
+    const toDoDeleteClick = (id) => {
+        dispatch({
+            type: TO_DO_LIST_ACTIONS.DELETE_TO_DO,
+            id: id
+        });
+    }
+
+    const onResetClick = () => {
+        dispatch({
+            type: TO_DO_LIST_ACTIONS.RESET_APPLICATION
+        });
+    }
+
+    return <div className='to-do-app'>
+        <h1>To-Do List</h1>
+        <div className='to-do-input-container'>
+            <input className='to-do-input' type='text' value={state.addToDoValue} onChange={(event) => addToDoChange(event)} />
+            <button className='add-to-do-button' onClick={() => { addToDoOnClick() }}>
+                <i className="fa-solid fa-square-plus fa-2xl"></i>
+            </button>
+        </div>
+
+        <button className='add-to-do-button' onClick={() => { onResetClick() }}>
+            RESET
+        </button>
+
+        <div className='to-do-list'>
+            {
+                state.toDos.map((item) => {
+                    return <ToDoListItem
+                        key={item.id}
+                        id={item.id}
+                        done={item.done}
+                        text={item.text}
+                        onDoneClick={(id) => toDoDoneClick(id)}
+                        onDeleteClick={(id) => toDoDeleteClick(id)}
+                    />;
+                })
             }
-        });
-        this.setState({
-            ...this.state,
-            toDos: updateToDos
-        });
-    }
-
-    toDoDeleteClick(id) {
-        const updateToDos = this.state.toDos.filter((toDo) => toDo.id !== id);
-
-        this.setState({
-            ...this.state,
-            toDos: updateToDos
-        });
-    }
-
-    getToDoTextClassName(isTodoDone) {
-        return isTodoDone ? 'to-do-text to-do-done' : 'to-do-text';
-    }
-
-    render() {
-        return <div className='to-do-app'>
-            <h1>To-Do List</h1>
-            <div className='to-do-input-container'>
-                <input className='to-do-input' type='text' value={this.state.addToDoValue} onChange={(event) => this.addToDoChange(event)} />
-                <button className='add-to-do-button' onClick={() => { this.addToDoOnClick() }}>
-                    <i className="fa-solid fa-square-plus fa-2xl"></i>
-                </button>
-            </div>
-            <div className='to-do-list'>
-                {
-                    this.state.toDos.map((item) => {
-                        return <ToDoListItem
-                            id={item.id}
-                            done={item.done}
-                            text={item.text}
-                            onDoneClick={(id) => this.toDoDoneClick(id)}
-                            onDeleteClick={(id) => this.toDoDeleteClick(id)}
-                        />;
-                    })
-                }
-            </div>
-        </div>;
-    }
+        </div>
+    </div>;
 }
 
 export default ToDoList;

@@ -2,11 +2,11 @@ import './toDoList.css';
 
 export const ToDoListItem = (props) => {
     const toDoDoneClick = () => {
-        this.props.onDoneClick(this.props.id);
+        props.onDoneClick(props.id);
     }
 
     const toDoDeleteClick = () => {
-        this.props.onDeleteClick(this.props.id);
+        props.onDeleteClick(props.id);
     }
 
     const getToDoTextClassName = (isTodoDone) => {

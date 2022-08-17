@@ -1,49 +1,51 @@
-import React from 'react';
+import { useState } from 'react';
 import './Counter.css';
 
-const initialState = {
-    count: 0
-};
+const initialCountValue = 0;
+const initialInputValue = '';
 
-class Counter extends React.Component {
-    constructor(props) {
-        super(props);
-        // state creation
-        this.state = initialState;
-    }
+// {
+//     count: 0,
+//     myInputValue: ''
+// }
 
-    handleIncrementClick() {
+export const Counter = (props) => {
+
+    const [count, setCounter] = useState(initialCountValue);
+    const [myInputValue, setMyInputValue] = useState(initialInputValue);
+
+    const handleIncrementClick = () => {
         // state mutation
-        this.setState({
-            count: this.state.count + 1
-        });
+        setCounter(count + 1);
     }
 
-    handleDecrementClick() {
+    const handleDecrementClick = () => {
         // state mutation
-        this.setState({
-            count: this.state.count - 1
-        });
+        setCounter(count - 1);
     }
 
-    handleResetClick() {
+    const handleResetClick = () => {
         // state mutation
-        this.setState(initialState);
+        setCounter(initialCountValue);
+        setMyInputValue(initialInputValue);
     }
 
-    render() {
-        return (
-            <div className={this.props.className}>
-                <div>My Counter Component</div>
-                <div>
-                    <button className= 'increment-btn' onClick={() => this.handleIncrementClick()}>Increment</button>
-                    <button className= 'decrement-btn' onClick={() => this.handleDecrementClick()}>Decrement</button>
-                    <button className= 'reset-btn' onClick={() => this.handleResetClick()}>Reset</button>
-                </div>
-                <div>Count: {this.state.count}</div>
+    const handleInputChange = (event) => {
+        setMyInputValue(event.target.value);
+    }
+
+    return (
+        <div className={props.className}>
+            <div>My Counter Component</div>
+            <input type="text" value={myInputValue} onChange={(event) => handleInputChange(event)} />
+            <div>
+                <button className='increment-btn' onClick={() => handleIncrementClick()}>Increment</button>
+                <button className='decrement-btn' onClick={() => handleDecrementClick()}>Decrement</button>
+                <button className='reset-btn' onClick={() => handleResetClick()}>Reset</button>
             </div>
-        );
-    }
+            <div>Count: {count}</div>
+        </div>
+    );
 }
 
 export default Counter;
