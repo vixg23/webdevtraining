@@ -1,4 +1,5 @@
 import './toDoList.css';
+import ExampleComponent from './ExampleComponent';
 
 export const ToDoListItem = (props) => {
     const toDoDoneClick = () => {
@@ -15,6 +16,7 @@ export const ToDoListItem = (props) => {
 
     return (<div className="to-do-item" key={props.id}>
         <div className={getToDoTextClassName(props.done)}>{props.text}</div>
+        <ExampleComponent/>
         <div>
             <button className='done-button' onClick={() => { toDoDoneClick() }}>
                 <i className="fa-solid fa-check fa-lg"></i>

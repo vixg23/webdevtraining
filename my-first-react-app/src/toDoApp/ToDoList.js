@@ -1,7 +1,14 @@
-import React, { useReducer } from "react";
+import React, { useReducer, createContext } from "react";
 import ToDoListItem from './ToDoListItem';
 import './toDoList.css';
 import reducer, { TO_DO_LIST_ACTIONS, INITIAL_STATE } from './toDoReducer';
+
+export const UserContext = createContext({
+    name: '',
+    email: '',
+    location: '',
+    device: ''
+});
 
 const ToDoList = () => {
 
@@ -41,34 +48,43 @@ const ToDoList = () => {
         });
     }
 
-    return <div className='to-do-app'>
-        <h1>To-Do List</h1>
-        <div className='to-do-input-container'>
-            <input className='to-do-input' type='text' value={state.addToDoValue} onChange={(event) => addToDoChange(event)} />
-            <button className='add-to-do-button' onClick={() => { addToDoOnClick() }}>
-                <i className="fa-solid fa-square-plus fa-2xl"></i>
-            </button>
-        </div>
+    return (
+        <UserContext.Provider value={{
+            name: 'KUSUMA',
+            email: 'kusuma@gmail.com',
+            location: 'NY',
+            device: 'mobile'
+        }}>
+            <div className='to-do-app'>
+                <h1>To-Do List</h1>
+                <div className='to-do-input-container'>
+                    <input className='to-do-input' type='text' value={state.addToDoValue} onChange={(event) => addToDoChange(event)} />
+                    <button className='add-to-do-button' onClick={() => { addToDoOnClick() }}>
+                        <i className="fa-solid fa-square-plus fa-2xl"></i>
+                    </button>
+                </div>
 
-        <button className='add-to-do-button' onClick={() => { onResetClick() }}>
-            RESET
-        </button>
+                <button className='add-to-do-button' onClick={() => { onResetClick() }}>
+                    RESET
+                </button>
 
-        <div className='to-do-list'>
-            {
-                state.toDos.map((item) => {
-                    return <ToDoListItem
-                        key={item.id}
-                        id={item.id}
-                        done={item.done}
-                        text={item.text}
-                        onDoneClick={(id) => toDoDoneClick(id)}
-                        onDeleteClick={(id) => toDoDeleteClick(id)}
-                    />;
-                })
-            }
-        </div>
-    </div>;
+                <div className='to-do-list'>
+                    {
+                        state.toDos.map((item) => {
+                            return <ToDoListItem
+                                key={item.id}
+                                id={item.id}
+                                done={item.done}
+                                text={item.text}
+                                onDoneClick={(id) => toDoDoneClick(id)}
+                                onDeleteClick={(id) => toDoDeleteClick(id)}
+                            />;
+                        })
+                    }
+                </div>
+            </div>
+        </UserContext.Provider>
+    );
 }
 
 export default ToDoList;
