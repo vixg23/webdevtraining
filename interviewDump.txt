@@ -1,0 +1,89 @@
+Order of Technologies
+----
+React, Redux
+MaterialUI
+JS, JSX
+CSS (flexbox, SCSS preprocessors, FA, @media-query)
+HTML5
+Angular
+bootstrap
+JQuery
+
+
+
+CSS - preprocessors
+SCSS(SASS)
+-nesting classes
+-mixin
+-variables
+
+
+
+
+SDLC - Software development lifecycle
+
+[--------------------------]
+
+Sep 01 - Project inception
+[--] 2 weeks - Sprint
+1 - 8 hours - 15mins - Scrum call, DSM- daily standup meeting
+1
+1
+1
+1
+1
+[--] 2 weeks - Sprint
+[--] 2 weeks
+[--] 2 weeks
+[--] 2 weeks
+[--] 2 weeks
+[--] 2 weeks
+Dec 31 - Production date (Live date)
+
+
+
+Spotify - music player
+-------
+
+2 weeks - login page
+2 weeks - list of music albums page
+2 weeks - list of songs in an albums
+2 weeks - Artist catalog
+2 weeks - music player with actions
+
+
+
+wireframe(Mockup, figma) - Product owner (PO), business analyst, UX engineer
+develop - lead developer, engineers
+deploy - Site Reliabilty Engineers(SRE), deployment engineer, devops engineer, Release engineer
+test(local, QA) - Testers, QA Engineers
+UAT - QA Engineers
+live - Users
+
+
+
+local (5 days)    http://localhost:3000/login.html 
+dev (6th day)     http://open.spotify.dev.com/login.html
+QA/test (7th day) http://open.spotify.qa.com/login.html
+UAT               http://open.spotify.uat.com/login.html
+live              http://open.spotify.com/login.html (99.6%) Uptime
+
+
+Project management - Agile methodology
+Sprint
+Scrum - DSM
+
+
+
+Project Management/Tracking Tools
+------------------------
+
+JIRA, CA Agile Central
+
+
+JIRA
+----
+
+EPIC - Whole Project - Product Owner
+Story(User Story) - Product Owner
+Bugs - QA
