@@ -88,13 +88,3 @@ const ToDoList = () => {
 }
 
 export default ToDoList;
-
-
-// Header
-// Input text
-// Add Button
-
-// -- Todo Task --
-// Todo task div
-// Task done button
-// Delete Button

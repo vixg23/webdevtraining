@@ -1,0 +1,46 @@
+1. About your experience
+-------------------------
+
+Designation - web developer / FE Engineer / FullStack developer
+Total years of experience in related field - 6+
+Most Recent project - ADP
+Type of Team - Agile
+Size of the team - 6+ members
+Product Name - Payroll management
+Product description - Short 30 seconds description
+Day to day activites - Develop webpages from wireframes, build components for webpages, Fetch and update  data form/to the server
+Web development Technologies used - React, Redux, Javascript(ES6), SCSS for styling, HTML5.
+For project management - JIRA, Github
+
+Previous project description - Health care
+Web development Technologies used - HTML, CSS, JQuery
+
+
+2. Team Coding Process
+-----------------------
+
+local (5 days)    http://localhost:3000/login.html
+
+
+commit & push to git
+Code Review (Pull request)
+Approve and merge to master
+
+(
+    git commands
+    ------------
+
+    git branch
+    git fetch --all
+    git checkout <branch_name>
+    git checkout -b <new_branch_name>
+    git status
+    git add <file_path>
+    git add .
+)
+
+
+dev (6th day)     http://open.spotify.dev.com/login.html
+QA/test (7th day) http://open.spotify.qa.com/login.html
+UAT               http://open.spotify.uat.com/login.html
+live              http://open.spotify.com/login.html (99.6%) Uptime
