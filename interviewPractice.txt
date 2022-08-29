@@ -41,8 +41,71 @@ Approve and merge to master
     git push
 )
 
-
+environments
+------------
 dev (6th day)     http://open.spotify.dev.com/login.html
 QA/test (7th day) http://open.spotify.qa.com/login.html
 UAT               http://open.spotify.uat.com/login.html
 live              http://open.spotify.com/login.html (99.6%) Uptime
+
+
+
+3. Technical Questions
+-----------------------
+
+Javascript
+----------
+
+-Diff between primitive and non-primitive datatypes
+int, boolean, string
+
+non-primitve/reference datatypes
+array, object
+
+
+- Difference between =, == and ===
+= -> Assignment let a = 5;
+
+let x=10, y=10
+x==y  true
+
+let x=10, y='10'
+x==y  true (No type check is done)
+
+
+let x=10, y='10'
+x===y  false(Type check is done)
+
+
+(ES6)
+JSX -> To return HTML in javascript file
+Arrow function shorthand to declare a function
+
+array methods
+const myArray = [1, 5, 55, 20, 16, 40, 88, 31];
+
+myArray.filter = return array
+myArray.find = return first item that meets the condition
+myArray.forEach = loop through each element
+myArray.map = loop through each element return an array
+
+
+const myArray = [1, 5, 55, 20, 16, 40, 88, 31];
+
+
+// array forEach demo
+const result = [];
+myArray.forEach((element) => {
+    if(element > 20) {
+        result.push(element);
+    }
+});
+return result;
+
+
+// array map demo
+const result = myArray.map((element) => {
+    if(element>20) {
+        return element;
+    }
+});
