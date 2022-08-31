@@ -186,7 +186,7 @@ const [economics, maths, science ]  = listOfStudentMarks;
 const [count, setCount] = useState(0);
 
 
-h) Class
+j) Class
 ---------
 
 class Person extends Parent {
@@ -211,7 +211,7 @@ const person1 = new Person(10);
 console.log(person1.getAge());
 
 
-i) default parameters
+k) default parameters
 ---------------------
 
 const sum = (a, b=0) => {
@@ -222,7 +222,7 @@ sum(4);
 sum(4, 6);
 
 
-h) for in, for of
+l) for in, for of
 -----------------
 
 for..in -> Object looping
