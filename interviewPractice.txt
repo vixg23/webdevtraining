@@ -39,6 +39,7 @@ Approve and merge to master
     git add .
     git commit -m "<commit_message>"
     git push
+    git stash apply
 )
 
 environments
