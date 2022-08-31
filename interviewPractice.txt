@@ -1,0 +1,229 @@
+1. About your experience
+-------------------------
+
+Designation - web developer / FE Engineer / FullStack developer
+Total years of experience in related field - 6+
+Most Recent project - ADP
+Type of Team - Agile
+Size of the team - 6+ members
+Product Name - Payroll management
+Product description - Short 30 seconds description
+Day to day activites - Develop webpages from wireframes, build components for webpages, Fetch and update  data form/to the server
+Web development Technologies used - React, Redux, Javascript(ES6), SCSS for styling, HTML5.
+For project management - JIRA, Github
+
+Previous project description - Health care
+Web development Technologies used - HTML, CSS, JQuery
+
+
+2. Team Coding Process
+-----------------------
+
+local (5 days)    http://localhost:3000/login.html
+
+
+commit & push to git
+Code Review (Pull request)
+Approve and merge to master
+
+(
+    git commands (to perform code actions on repo)
+    ------------
+
+    git branch
+    git fetch --all
+    git checkout <branch_name>
+    git checkout -b <new_branch_name>
+    git status
+    git add <file_path>
+    git add .   //For staging files for commit
+    git commit -m "<commit_message>"
+    git push
+    git stash
+    git stash apply
+)
+
+environments
+------------
+dev (6th day)     http://open.spotify.dev.com/login.html
+QA/test (7th day) http://open.spotify.qa.com/login.html
+UAT               http://open.spotify.uat.com/login.html
+live              http://open.spotify.com/login.html (99.6%) Uptime
+
+
+
+3. Technical Questions
+-----------------------
+
+Javascript
+----------
+
+a) Diff between primitive and non-primitive datatypes
+int, boolean, string
+
+non-primitve/reference datatypes
+array, object
+
+
+b) Difference between =, == and ===
+= -> Assignment let a = 5;
+
+let x=10, y=10
+x==y  true
+
+let x=10, y='10'
+x==y  true (No type check is done)
+
+
+let x=10, y='10'
+x===y  false(Type check is done)
+
+
+(ES6)
+c) JSX -> To return HTML in javascript file
+Arrow function shorthand to declare a function
+
+d) array methods
+const myArray = [1, 5, 55, 20, 16, 40, 88, 31];
+
+myArray.filter = return array
+myArray.find = return first item that meets the condition
+myArray.forEach = loop through each element
+myArray.map = loop through each element return an array
+
+
+const myArray = [1, 5, 55, 20, 16, 40, 88, 31];
+
+
+// array forEach demo
+const result = [];
+myArray.forEach((element) => {
+    if(element > 20) {
+        result.push(element);
+    }
+});
+return result;
+
+
+// array map demo
+const result = myArray.map((element) => {
+    if(element>20) {
+        return element;
+    }
+});
+
+
+e) 'Hello' + ' ' + name // String concatenation
+String Interpolation (Template literals)
+let name = 'Vamsi';
+console.log(`Hello ${Vamsi}`);
+
+
+f) Spread operator
+---------------
+
+const obj1 = { key1: 'a', key2: true};
+const obj2 = { ...obj1, key3: 'xyz };
+
+
+g) Rest operator
+----------------
+
+const sum = (...args) => {
+    let result = 0;
+    args.forEach((arg) => result += arg);
+    return result;
+};
+
+sum(1, 5);
+sum(1, 5, 10, 56);
+
+
+h) Object destructuring
+-----------------------
+
+const obj1 = {
+    key1: 'abc',
+    key2: true,
+    key3: 'xyz',
+    key4: 10
+}
+
+const { key4, key1, key2 } = obj1;
+
+if(key2) {
+    do something
+}
+
+if(key2) {
+    do something
+}
+
+if(key2) {
+    do something
+}
+
+
+const props = {
+    disabled: true,
+    label: 'NAME',
+    className: 'my-input'
+}
+
+const { disabled } = props;
+
+if(disabled) {
+
+}
+
+
+i) Array destructuring
+-----------------------
+
+const listOfStudentMarks = [40,90,95];
+const [economics, maths, science ]  = listOfStudentMarks;
+
+const [count, setCount] = useState(0);
+
+
+h) Class
+---------
+
+class Person extends Parent {
+
+    constructor(age, parentName) {
+        super(parentName);
+        this.age = age;
+    }
+
+    getAge: () => {
+        return `Person's age is ${this.age}`;
+    }
+}
+
+class Parent {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+const person1 = new Person(10);
+console.log(person1.getAge());
+
+
+i) default parameters
+---------------------
+
+const sum = (a, b=0) => {
+    return a+b;
+}
+
+sum(4);
+sum(4, 6);
+
+
+h) for in, for of
+-----------------
+
+for..in -> Object looping
+for..of -> Array looping
